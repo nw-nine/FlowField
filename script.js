@@ -29,13 +29,14 @@ class Particle {
     }
     update() {
         let x = Math.floor(this.x / this.effect.cellSize)
+        console.log(x);
         let y = Math.floor(this.y / this.effect.cellSize)
         let index = y * this.effect.cols + x
         this.angle = this.effect.flowField[index]
 
         this.speedX = Math.cos(this.angle)
         this.speedY = Math.sin(this.angle)
-        this.x += this.speedx
+        this.x += this.speedX
         this.y += this.speedY
 
         this.history.push({x: this.x, y: this.y})
