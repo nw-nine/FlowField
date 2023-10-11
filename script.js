@@ -30,7 +30,7 @@ class Particle {
         context.stroke()
     }
     update() {
-        this.timer--
+        this.timer--;
         if(this.timer >= 1) {
             let x = Math.floor(this.x / this.effect.cellSize)
             let y = Math.floor(this.y / this.effect.cellSize)
@@ -55,7 +55,7 @@ class Particle {
     reset() {
         this.x = Math.floor(Math.random() * this.effect.width)
         this.y = Math.floor(Math.random() * this.effect.height)
-        this.history.push({x: this.x, y: this.y})
+        this.history = [{x: this.x, y: this.y}]
         this.timer = this.maxLength * 2
     }
 }
